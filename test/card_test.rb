@@ -54,13 +54,25 @@ describe Card do
 
   describe "Reader methods" do
 
+    card4 = Card.new(4, :spades)
+    card7 = Card.new(7, :hearts)
+    card12 = Card.new(12, :diamonds)
+    card5 = Card.new(5, :clubs)
+
     it "Can retrieve the value of the card using a `.value`." do
       # ensure that `.value works as expected`
+      expect(card4.value).must_equal 4
+      expect(card7.value).must_equal 7
+      expect(card12.value).must_equal 12
+      expect(card5.value).must_equal 5
     end
 
     it "Can retrieve the value of the card using a `.suit`." do
       # ensure that `.suit works as expected returning the symbol of the suit`
-
+      expect(card4.suit).must_equal :spades
+      expect(card7.suit).must_equal :hearts
+      expect(card12.suit).must_equal :diamonds
+      expect(card5.suit).must_equal :clubs
     end
   end
 
