@@ -26,20 +26,29 @@ describe Card do
     it "to_s returns a readable String value logically for values 2-10" do
       # Test to ensure that to_s works for cards values 2-10
       # for example:  "2 of diamonds"
+      card1 = "2 of diamonds"
+      card2 = "6 of clubs"
+      card3 = "9 of hearts"
+      card4 = "10 of spades"
+
+      expect(Card.new(2, :diamonds).to_s).must_equal card1
+      expect(Card.new(6, :clubs).to_s).must_equal card2
+      expect(Card.new(9, :hearts).to_s).must_equal card3
+      expect(Card.new(10, :spades).to_s).must_equal card4
     end
 
     it "to_s returns a readable String value for Ace, Jack, Queen, King" do
       # Test to ensure that to_s works for cards values 1, and 11-13
       # For example: "Queen of hearts"
-      # The current implementation of to_s does not address this feature
-      # Write the test, see it fail, then modify to_s to make it pass!
-      # (Consider writing a helper method!)
-      #
-      # For reference:
-      #  1: Ace
-      #  11: Jack
-      #  12: Queen
-      #  13: King
+      card1 = "Ace of spades"
+      card11 = "Jack of hearts"
+      card12 = "Queen of diamonds"
+      card13 = "King of clubs"
+
+      expect(Card.new(1, :spades).to_s).must_equal card1
+      expect(Card.new(11, :hearts).to_s).must_equal card11
+      expect(Card.new(12, :diamonds).to_s).must_equal card12
+      expect(Card.new(13, :clubs).to_s).must_equal card13
     end
   end
 
